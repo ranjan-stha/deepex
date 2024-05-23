@@ -2,6 +2,7 @@
 build/
 dist/
 tools/
+test.py
 tools/**/data/*
 tools/**/**/.serverless
 */deep_parser.egg-info

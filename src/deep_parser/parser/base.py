@@ -57,12 +57,12 @@ class Results:
 
 class TextFromFile:
 
-    def __init__(self, stream: bytes = None, from_web=False, url: str = None, ext: str = "pdf"):
+    def __init__(self, stream: bytes = None, from_web=False, url: str = None, ext: str = "pdf", timeout: int = 60):
 
         try:
             if from_web:
                 if not url: raise ValueError("A valid PDF url must be passed")
-                doc = requests.get(url).content
+                doc = requests.get(url, timeout=timeout).content
             stream = io.BytesIO(base64.b64decode(stream)) if not from_web else io.BytesIO(doc)
             self.pdf = Pdf(stream=stream, filetype=ext)
         except (RuntimeError, ValueError, Exception) as exc:
