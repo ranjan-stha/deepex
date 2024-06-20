@@ -17,10 +17,12 @@ setup(
         "pyyaml",
         "beautifulsoup4",
         "lxml==5.0.0",
-        "requests-html",
+        # "requests-html",
         "readable-content",
         "timeout-decorator",
-        "pandas"
+        "pandas",
+        "requests",
+        "trafilatura"
         ],
 
     entry_points={
